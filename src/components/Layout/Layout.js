@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 
-import Auxiliary from "../../hoc/Auxiliary";
 import "./Layout.css";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
@@ -10,9 +9,7 @@ class Layout extends Component {
     super(props);
     this.state = {
       showSideDrawer: false,
-      // sideMenuClicked: false,
     };
-    // this.sideMenuHandler = this.sideMenuHandler.bind(this);
   }
 
   sideDrawerClosedHandler = () => {
@@ -26,8 +23,6 @@ class Layout extends Component {
       return {
         showSideDrawer: !prevState.showSideDrawer,
       };
-
-      // showSideDrawer: true,
     });
   };
 
@@ -35,12 +30,6 @@ class Layout extends Component {
     return (
       <Fragment>
         <Toolbar sideMenuClicked={this.sideMenuHandler} />
-        {/* {this.state.sideMenuClicked && (
-          <SideDrawer
-            closed={this.sideDrawerClosedHandler}
-            open={this.state.showSideDrawer}
-          />
-        )} */}
         <SideDrawer
           closed={this.sideDrawerClosedHandler}
           open={this.state.showSideDrawer}

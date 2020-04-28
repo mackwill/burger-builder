@@ -1,6 +1,12 @@
 .SideMenu {
   display: none;
 }
+
+i {
+  color: white;
+  font-size: 26px;
+}
+
 @media (max-width: 499px) {
   .SideMenu {
     display: block;
