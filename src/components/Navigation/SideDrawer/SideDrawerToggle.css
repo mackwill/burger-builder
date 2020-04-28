@@ -1,0 +1,8 @@
+.SideMenu {
+  display: none;
+}
+@media (max-width: 499px) {
+  .SideMenu {
+    display: block;
+  }
+}

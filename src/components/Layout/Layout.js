@@ -10,39 +10,41 @@ class Layout extends Component {
     super(props);
     this.state = {
       showSideDrawer: false,
-      sideMenuClicked: false,
+      // sideMenuClicked: false,
     };
-    this.sideMenuHandler = this.sideMenuHandler.bind(this);
+    // this.sideMenuHandler = this.sideMenuHandler.bind(this);
   }
 
   sideDrawerClosedHandler = () => {
     this.setState({
       showSideDrawer: false,
-      // sideMenuClicked: false,
     });
-    console.log("Backdrop Clicked");
   };
 
   sideMenuHandler = () => {
-    this.setState({
-      //sideMenuClicked: true,
-      sideMenuClicked: !this.state.sideMenuClicked,
-      showSideDrawer: true,
+    this.setState((prevState) => {
+      return {
+        showSideDrawer: !prevState.showSideDrawer,
+      };
+
+      // showSideDrawer: true,
     });
-    console.log("Clicked");
   };
 
   render() {
     return (
       <Fragment>
         <Toolbar sideMenuClicked={this.sideMenuHandler} />
-        {this.state.sideMenuClicked && (
+        {/* {this.state.sideMenuClicked && (
           <SideDrawer
             closed={this.sideDrawerClosedHandler}
             open={this.state.showSideDrawer}
           />
-        )}
-
+        )} */}
+        <SideDrawer
+          closed={this.sideDrawerClosedHandler}
+          open={this.state.showSideDrawer}
+        />
         <main className="Content">{this.props.children}</main>
       </Fragment>
     );
